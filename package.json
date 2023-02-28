@@ -1,0 +1,24 @@
+{
+  "name": "kcs-node-scripts",
+  "version": "1.0.0",
+  "description": "Same node utils scripts",
+  "main": "index.js",
+  "scripts": {
+    "crear:script": "sh ./scripts/crear.sh $1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marck-G/node-scripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marck-G/node-scripts/issues"
+  },
+  "homepage": "https://github.com/Marck-G/node-scripts#readme",
+  "dependencies": {
+    "package-json-path": "^1.0.9",
+    "chalk": "^4.1.0"
+  }
+}
