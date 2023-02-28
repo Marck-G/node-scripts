@@ -13,7 +13,7 @@ const argObj = parseArgs(process.argv);
 const getFromCMD = argObj.componentsDir || argObj.d || false;
 const componentName = argObj.value;
 const withSass = argObj.s == null || argObj.sass == null || false;
-const help = argObj.h == null || argObj.help == null || false;
+const help = argObj.h != undefined || argObj.help != undefined || false;
 let componentsPath;
 
 if(help){

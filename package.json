@@ -1,7 +1,7 @@
 {
-  "name": "kcs-node-scripts",
-  "version": "1.0.0",
-  "description": "Same node utils scripts",
+  "name": "@kcram-solutions/node-scripts",
+  "version": "0.1.1",
+  "description": "Herramientas para el desarrollo en node",
   "main": "index.js",
   "bin": {
     "react-componente": "./src/scripts/react-componente.js"
@@ -19,7 +19,10 @@
     "url": "git+https://github.com/Marck-G/node-scripts.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Marck C. Guzmán",
+    "email": "mcarrion@kcramsolutions.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Marck-G/node-scripts/issues"
