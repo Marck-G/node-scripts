@@ -3,8 +3,8 @@
 const chalk = require('chalk');
 const fs = require('fs');
 const packPath = require('package-json-path');
-const { parseArgs } = require('./helpers/parse-args');
-const { log, error, info } = require('./helpers/logger');
+const { parseArgs } = require('../helpers/parse-args');
+const { log, error, info } = require('../helpers/logger');
 const path = require('path');
 const configKey = "componentsDir";
 const CWD = process.cwd();
@@ -13,8 +13,12 @@ const argObj = parseArgs(process.argv);
 const getFromCMD = argObj.componentsDir || argObj.d || false;
 const componentName = argObj.value;
 const withSass = argObj.s == null || argObj.sass == null || false;
-
+const help = argObj.h == null || argObj.help == null || false;
 let componentsPath;
+
+if(help){
+	showHelp();
+}
 
 if(!componentName){
 	error('No se ha pasado un nombre para el componente');
@@ -76,7 +80,8 @@ console.log();
 */
 
 function showHelp(code = 0){
-	console.log('\n  USO: ',chalk.hex('#ffc00e')('react:component'),chalk.blue( '[OPCIONES]'),chalk.green(' <nombre>'));
+	console.log('\n\n  Crea un componente para react en el directorio de componentes.');
+	console.log('\n  USO: ',chalk.hex('#ffc00e')('react-componente'),chalk.blue( '[OPCIONES]'),chalk.green(' <nombre>'));
 	console.log("\n  OPCIONES:");
 	console.log("    -d,--components-dir", chalk.green(" <dir>"), " ".repeat(10), "Selecionamos la ruta de la carpeta components");
 	console.log("    -s,--sass",  " ".repeat(27), "Si usa sass el componente");
@@ -85,4 +90,5 @@ function showHelp(code = 0){
 	console.log(chalk.bgHex('#ffc00e').bold.hex('#000000')("\t\t\t    KCRAM SOLUTIONS   "));
 	console.log(chalk.hex('#a0a0a0')('\t\t\t2023 © KCRAMSOLUTIONS'));
 	console.log();
+	process.exit(code);
 }

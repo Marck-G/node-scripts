@@ -11,6 +11,9 @@
 		value: null,
 		values: []
 	};
+	if(!args || args.length ==0){
+		return outObjs;
+	}
 
 	const last = args.pop();
 	if(!isOpt(last)){

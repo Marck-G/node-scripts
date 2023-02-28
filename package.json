@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Same node utils scripts",
   "main": "index.js",
+  "bin": {
+    "react-componente": "./src/scripts/react-componente.js"
+  },
   "scripts": {
     "crear:script": "sh ./scripts/crear.sh $1"
   },
