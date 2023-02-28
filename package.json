@@ -6,6 +6,11 @@
   "bin": {
     "react-componente": "./src/scripts/react-componente.js"
   },
+  "files": [
+    "./src",
+    "./LICENSE",
+    "./README.md"
+  ],
   "scripts": {
     "crear:script": "sh ./scripts/crear.sh $1"
   },
