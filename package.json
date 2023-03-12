@@ -1,6 +1,6 @@
 {
   "name": "@kcram-solutions/node-scripts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Herramientas para el desarrollo en node",
   "main": "index.js",
   "bin": {

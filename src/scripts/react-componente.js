@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const VERSION ="0.1.2"
 const chalk = require('chalk');
 const fs = require('fs');
 const packPath = require('package-json-path');
@@ -12,7 +13,7 @@ const pkgPath = packPath(CWD);
 const argObj = parseArgs(process.argv);
 const getFromCMD = argObj.componentsDir || argObj.d || false;
 const componentName = argObj.value;
-const withSass = argObj.s == null || argObj.sass == null || false;
+const withSass = argObj.s || argObj.sass || false;
 const help = argObj.h != undefined || argObj.help != undefined || false;
 let componentsPath;
 
@@ -84,7 +85,7 @@ function showHelp(code = 0){
 	console.log('\n  USO: ',chalk.hex('#ffc00e')('react-componente'),chalk.blue( '[OPCIONES]'),chalk.green(' <nombre>'));
 	console.log("\n  OPCIONES:");
 	console.log("    -d,--components-dir", chalk.green(" <dir>"), " ".repeat(10), "Selecionamos la ruta de la carpeta components");
-	console.log("    -s,--sass",  " ".repeat(27), "Si usa sass el componente");
+	console.log("    -s,--sass true",  " ".repeat(22), "Si usa sass el componente");
 	console.log("    <nombre>", " ".repeat(28), "Nombre del componente")
 	console.log("\n\n\t\t     mcarrion@kcramsolutions.com")
 	console.log(chalk.bgHex('#ffc00e').bold.hex('#000000')("\t\t\t    KCRAM SOLUTIONS   "));

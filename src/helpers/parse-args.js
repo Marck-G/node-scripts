@@ -9,7 +9,8 @@
 		argv: args,
 		args: args.join(' '),
 		value: null,
-		values: []
+		values: [],
+		version: null
 	};
 	if(!args || args.length ==0){
 		return outObjs;
@@ -18,6 +19,9 @@
 	const last = args.pop();
 	if(!isOpt(last)){
 		outObjs.value = last;
+	}else{
+		const key = parseOpt(last);
+		outObjs[key] = (key == 'h' || key == 'help') ? true : null ;
 	}
 	let currentKey = null;
 	for(let i = 0; i < args.length; i++){
@@ -31,7 +35,7 @@
 			}else{
 				// es una opción
 				const key = parseOpt(item);
-				outObjs[key] = null;
+				outObjs[key] = (key == 'h' || key == 'help') ? true : null ;
 				currentKey = key;
 			}
 		}catch(e){

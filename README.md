@@ -10,6 +10,6 @@ Crea un componente para react en el directorio de componentes.
 
   OPCIONES:
     -d,--components-dir  <dir>            Selecionamos la ruta de la carpeta components
-    -s,--sass                             Si usa sass el componente
+    -s,--sass [true | 1]                  Si usa sass el componente
     <nombre>                              Nombre del componente
 ```
