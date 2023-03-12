@@ -15,7 +15,7 @@ jobs:
           node-version: 16
       - run: npm ci
 
-  publish-npm:
+  publucar_npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - run: echo ${{secrets.NPM_TOKEN}}
       - run: npm ci
       - run: npm publish --access public
         env:
